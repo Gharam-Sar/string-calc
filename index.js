@@ -6,10 +6,23 @@ function Add(nums){
       case 1:
         if(num_array[0]=="")
         return '0';
-        else
-        return parseInt(num_array[0]);
+        else {
+          if (parseInt(num_array[0])>=0)
+          return parseInt(num_array[0]);
+          else throw new Error('negatives not allowed,you entered'+ num_array[0]);
+
+        }
+       
       case 2:
-        return parseInt(num_array[0])+parseInt(num_array[1]);
+        if (parseInt(num_array[0])<0 && parseInt(num_array[1])>=0)
+        throw new Error('negatives not allowed,you entered'+ num_array[0]);
+        else if (parseInt(num_array[1])<0 && parseInt(num_array[0])>=0)
+        throw new Error('negatives not allowed,you entered'+ num_array[1]);
+        else if (parseInt(num_array[0]<0) && parseInt(num_array[1])<0)
+        {        throw new Error('negatives not allowed,you entered'+ num_array[0]+"," + num_array[1]);
+}
+        else return parseInt(num_array[0])+parseInt(num_array[1]);
+
     }
     return "args are not valid, try again"
     
