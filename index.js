@@ -11,6 +11,7 @@ function Add(nums){
       case 2:
         return parseInt(num_array[0])+parseInt(num_array[1]);
     }
+    return "args are not valid, try again"
     
 }
 module.exports = Add;
