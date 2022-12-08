@@ -58,6 +58,31 @@ test("2 numbers", () => {
 
 });
 
+test("1 number  over 1000", () => {
+    let str1=String(1002);
+  expect(Add(str1)).toBe(0);
+
+});
+test("2 numbers  over 1000", () => {
+    let str1=String(1002);
+    let str2=String(1003);
+  expect(Add(str1+","+str2)).toBe(0);
+
+});
+test("first of 2 numbers is over 1000", () => {
+    let str1=String(1002);
+    let str2=String(3);
+  expect(Add(str1+","+str2)).toBe(parseInt(str2));
+
+});
+test("seconed of 2 numbers is over 1000", () => {
+    let str1=String(2);
+    let str2=String(1003);
+  expect(Add(str1+","+str2)).toBe(parseInt(str1));
+
+});
+
+
 test("unknown amount of numbers", () => {
     let str1=String(1);
     let str2=String(3);
