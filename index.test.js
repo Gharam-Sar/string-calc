@@ -45,6 +45,17 @@ test("the first of 2 is a negative number", () => {
         expect(e.message).toBe("negatives not allowed,you entered"+str1);
     }
 });
+test("one empty number of 2", () => {
+
+    let str1="";
+    let str2=String(3);
+    try {
+        Add(str1+","+str2);
+    } catch (e) {
+        expect(e.message).toBe("negatives not allowed,you entered"+str1);
+    }
+});
+
 test("the second of 2 is a negative number", () => {
 
     let str1=String(1);
@@ -59,13 +70,25 @@ test(" 2 negative numbers", () => {
 
     let str1=String(-1);
     let str2=String(-3);
-    let ss=str1+","+ str2;
+    try {
+        console.log(Add(str1+","+str2));
+        Add(str1+","+str2);
+    } catch (e) {
+        expect(e.message).toBe('negatives not allowed,you entered'+ str1+","+ str2);
+    }
+});
+
+test(" 2 negative numbers", () => {
+
+    let str1=String(-1);
+    let str2=String(-4);
+   
     try {
         console.log(Add(str1+","+str2));
         Add(str1+","+str2);
 
     } catch (e) {
-        expect(e.message).toBe('negatives not allowed,you entered'+ ss);
+        expect(e.message).toBe('negatives not allowed,you entered'+ str1+","+ str2);
     }
 });
 
